@@ -102,6 +102,7 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.174533
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("1_bv8jw")
 offset = Vector2(0, -4)
