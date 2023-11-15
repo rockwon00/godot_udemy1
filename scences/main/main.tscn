@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://btcilyb3fsu60"]
+[gd_scene load_steps=8 format=3 uid="uid://btcilyb3fsu60"]
 
+[ext_resource type="PackedScene" uid="uid://d4g07y6rc21aq" path="res://scences/ui/arena_time_ui.tscn" id="1_4p3js"]
 [ext_resource type="TileSet" uid="uid://di2n1xdxatg0r" path="res://resources/tileset.tres" id="1_81p1y"]
 [ext_resource type="PackedScene" uid="uid://5ham8yfdvc3p" path="res://scences/manager/enemy_manager.tscn" id="1_gyh4g"]
-[ext_resource type="PackedScene" uid="uid://bsbuttvie5vba" path="res://scences/player/player.tscn" id="1_tsf6y"]
-[ext_resource type="PackedScene" uid="uid://cnt580l00lywg" path="res://scences/game_camera/game_camera.tscn" id="2_oj6he"]
+[ext_resource type="PackedScene" uid="uid://bsbuttvie5vba" path="res://scences/game_object/player/player.tscn" id="1_tsf6y"]
+[ext_resource type="PackedScene" uid="uid://cnt580l00lywg" path="res://scences/game_object/game_camera/game_camera.tscn" id="2_oj6he"]
+[ext_resource type="PackedScene" uid="uid://dxjx5py4qtmcj" path="res://scences/ui/arena_time_manager.tscn" id="2_p7hb5"]
+[ext_resource type="PackedScene" uid="uid://c0eoxhdqqgp72" path="res://scences/game_object/experience_vail/experience_vial.tscn" id="7_puef8"]
 
 [node name="Main" type="Node2D"]
+
+[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_4p3js")]
+arena_time_manager = NodePath("../ArenaTimeManager")
+
+[node name="ArenaTimeManager" parent="." instance=ExtResource("2_p7hb5")]
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_gyh4g")]
 
@@ -18,3 +26,18 @@ layer_0/tile_data = PackedInt32Array(262146, 0, 4, 262147, 0, 4, 262148, 0, 4, 2
 
 [node name="Player" parent="." instance=ExtResource("1_tsf6y")]
 position = Vector2(321, 181)
+
+[node name="Experience_vial" parent="." instance=ExtResource("7_puef8")]
+position = Vector2(239, 234)
+
+[node name="Experience_vial2" parent="." instance=ExtResource("7_puef8")]
+position = Vector2(241, 165)
+
+[node name="Experience_vial3" parent="." instance=ExtResource("7_puef8")]
+position = Vector2(283, 91)
+
+[node name="Experience_vial4" parent="." instance=ExtResource("7_puef8")]
+position = Vector2(365, 93)
+
+[node name="Experience_vial5" parent="." instance=ExtResource("7_puef8")]
+position = Vector2(405, 170)
