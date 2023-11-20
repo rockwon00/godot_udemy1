@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ddgjgegilxm3t"]
+[gd_scene load_steps=2 format=3 uid="uid://ddgjgegilxm3t"]
+
+[ext_resource type="Script" path="res://scences/ui/experience_bar.gd" id="1_yu7gm"]
 
 [node name="ExperienceBar" type="CanvasLayer"]
+script = ExtResource("1_yu7gm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
