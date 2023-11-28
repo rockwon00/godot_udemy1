@@ -29,7 +29,7 @@ func apply_upgrade(upgrade : AbilityUpgrade):
 	else: #딕셔너리(사전)에 이미 키가 있다면
 		current_upgrades[upgrade.id]["quantity"] += 1	
 	
-	print(current_upgrades)
+	#print(current_upgrades)
 
 	GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
 	
