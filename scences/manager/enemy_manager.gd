@@ -14,37 +14,7 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
 
-<<<<<<< HEAD
-
-func get_sqawn_position():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
-	if player == null:
-		return Vector2.ZERO
-	
-	# 초기 스폰 위치 
-	var spawn_position = Vector2.ZERO
-	# 초기 무작위 방향  
-	var random_direction = Vector2.RIGHT.rotated(randf_range(0,TAU))	
-	
-	# 반복문으로 생성 위치 가져옴
-	for i in 4:
-		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
-	# 지형 레이어에 충돌이 있는지 확인
-		var query_paramaters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
-		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_paramaters)
-				
-		if result.is_empty():
-			break
-		else:
-			random_direction = random_direction.rotated(deg_to_rad(90))
-	
-	return spawn_position
-		
-		
-func on_timer_timeout():
-=======
 func get_spawn_position():
->>>>>>> 76db276a54bfcc9897fd39e202b4f6f8fd26351a
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return Vector2.ZERO
@@ -72,21 +42,14 @@ func get_spawn_position():
 func on_timer_timeout():
 	timer.start()
 	
-<<<<<<< HEAD
-=======
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return Vector2.ZERO
 
->>>>>>> 76db276a54bfcc9897fd39e202b4f6f8fd26351a
 	var enemy = basic_enemy_scene.instantiate() as Node2D
 	
 	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
 	entities_layer.add_child(enemy)
-<<<<<<< HEAD
-	enemy.global_position = get_sqawn_position()
-
-=======
 	enemy.global_position = get_spawn_position()
 	
 func on_arena_difficulty_increased(arena_difficulty : int):
@@ -94,4 +57,3 @@ func on_arena_difficulty_increased(arena_difficulty : int):
 	time_off = min(time_off, .7) 
 	print(time_off)
 	timer.wait_time = base_spwan_time - time_off
->>>>>>> 76db276a54bfcc9897fd39e202b4f6f8fd26351a
