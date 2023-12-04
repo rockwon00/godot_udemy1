@@ -30,6 +30,7 @@ func pick_upgrades():
 	# 동일한 요소가 있는 새 배열을 반환
 	var filtered_upgrades = upgrade_pool.duplicate()
 	for i in 2:
+		# 필터링된 업그레이트 풀 배열의 복사본
 		var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
 		chosen_upgrades.append(chosen_upgrade)
 		filtered_upgrades =  filtered_upgrades.filter(func (upgrade): return upgrade.id != chosen_upgrade.id)
