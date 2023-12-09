@@ -8,7 +8,7 @@ const MAX_RADIUS = 100
 var base_rotation = Vector2.RIGHT
 
 func _ready():
-	base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
+	base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))                                                                                                             
 	var tween = create_tween()
 	# 트윈 설정 3초 동안 0.0과 2.0 사이에서 트윈 실행
 	tween.tween_method(tween_method, 0.0, 2.0, 3)
